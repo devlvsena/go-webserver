@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: go-webserver-deployment
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: go-webserver
@@ -17,17 +17,4 @@ spec:
           image: lvsena/go-webserver:latest
           ports:
             - containerPort: 8080
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: go-webserver-service
-spec:
-  selector:
-    app: go-webserver
-  ports:
-    - protocol: TCP
-      port: 8080
-      targetPort: 8080
-  type: NodePort
       
