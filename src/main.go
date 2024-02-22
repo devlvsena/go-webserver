@@ -1,11 +1,21 @@
 package main
 
-import "lvsena/go-webserver/infra/server"
+import (
+	"fmt"
+	"lvsena/go-webserver/infra/server"
+)
 
 func main() {
+	port := "8080"
+
 	s := &server.Http{
-		Port: "8080",
+		Port: port,
 	}
 
-	s.Start()
+	fmt.Println("Starting Http Server on port", port)
+
+	err := s.Start()
+	if err != nil {
+		fmt.Println(err)
+	}
 }

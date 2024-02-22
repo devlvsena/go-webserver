@@ -1,7 +1,6 @@
 package server
 
 import (
-	"fmt"
 	"net/http"
 )
 
@@ -9,9 +8,7 @@ type Http struct {
 	Port string
 }
 
-func (h Http) Start() {
+func (h Http) Start() error {
 	err := http.ListenAndServe(":"+h.Port, nil)
-	if err != nil {
-		fmt.Print(err)
-	}
+	return err
 }
