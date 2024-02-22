@@ -1,8 +1,6 @@
 package main
 
-import (
-	"lvsena/go-webserver/server"
-)
+import "lvsena/go-webserver/infra/server"
 
 func main() {
 	s := &server.Http{
