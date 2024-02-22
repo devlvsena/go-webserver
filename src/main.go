@@ -1,15 +1,13 @@
 package main
 
 import (
-	"fmt"
-	"net/http"
+	"lvsena/go-webserver/server"
 )
 
 func main() {
-	http.HandleFunc("/", Handler)
-	http.ListenAndServe(":8080", nil)
-}
+	s := &server.Http{
+		Port: "8080",
+	}
 
-func Handler(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintf(w, "<h1>Hello, should att kube!<h1>")
+	s.Start()
 }
