@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"lvsena/go-webserver/infra/server"
+	server "lvsena/go-webserver/infra/server/http"
 )
 
 func main() {
